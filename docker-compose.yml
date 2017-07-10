@@ -1,0 +1,7 @@
+version: '2'
+services:
+  buddy-finder-api:
+    image: "wasong/buddy-finder-api"
+    build: .
+    ports:
+      - "3000:3000"
