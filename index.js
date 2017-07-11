@@ -2,24 +2,29 @@
 import express from 'express'
 import bodyParser from 'body-parser'
 import morgan from 'morgan'
-// import mongoose from 'mongoose'
+import mongoose from 'mongoose'
 
+import log from './log'
 import routes from './routes'
+import config from './config'
 
-const port = process.env.PORT || 3000
 const app = express()
+const { port, env } = config
 
 // app setup
 // middleware setup
 app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({ extended: true }))
 app.use(morgan('combined')) // TODO: configure later
 
 // db setup
-// mongoose.connect('mongodb://localhost:db/db')
+mongoose.Promise = global.Promise
+mongoose.connect(config.mongodb, { useMongoClient: !!1 })
+mongoose.connection.on('error', () => {
+  log.fatal('unable to connect to mongodb')
+})
 
 routes(app)
 
-app.listen(port, (req, res) => {
-  console.log('Listening on port: ', port)
+app.listen(port, () => {
+  log.info('🌚  api started 🚀 ', { port, env })
 })
