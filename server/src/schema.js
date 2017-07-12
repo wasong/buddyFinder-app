@@ -11,6 +11,7 @@ const rootSchema = [fs.readFileSync(join(__dirname, 'schema.graphql'), 'utf-8')]
 const rootResolvers = {
   Query: {
     user: id => getUserById(id),
+    userByEmail: email => getUserById(email),
     // address: (root, args) => getAddress(args.id),
     // addresses: (root, args) => getAllAddresses(args.address, args.service, args.limit),
   },
