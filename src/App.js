@@ -1,11 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
-import ApolloClient, { createNetworkInterface } from 'apollo-client'
-import { ApolloProvider } from 'react-apollo'
+import { ApolloProvider, ApolloClient, createNetworkInterface } from 'react-apollo'
 import { Provider } from 'react-redux'
 import { BrowserRouter as Router } from 'react-router-dom'
 import { StyleRoot } from 'radium'
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 
 import Routes from './routes'
 
@@ -24,31 +24,33 @@ const createClient = () => (
 
 function App(props) {
   return (
-    <ApolloProvider client={createClient()}>
-      <Provider store={props.store}>
-        <div>
-          <Helmet
-            titleTemplate="%s | Some Boilerplate"
-            meta={[
-              { charset: 'utf-8' },
-              {
-                'http-equiv': 'X-UA-Compatible',
-                content: 'IE=edge',
-              },
-              {
-                name: 'viewport',
-                content: 'width=device-width, initial-scale=1',
-              },
-            ]}
-          />
-          <StyleRoot>
-            <Router>
-              <Routes />
-            </Router>
-          </StyleRoot>
-        </div>
-      </Provider>
-    </ApolloProvider>
+    <MuiThemeProvider>
+      <ApolloProvider client={createClient()}>
+        <Provider store={props.store}>
+          <div>
+            <Helmet
+              titleTemplate="%s | Some Boilerplate"
+              meta={[
+                { charset: 'utf-8' },
+                {
+                  'http-equiv': 'X-UA-Compatible',
+                  content: 'IE=edge',
+                },
+                {
+                  name: 'viewport',
+                  content: 'width=device-width, initial-scale=1',
+                },
+              ]}
+            />
+            <StyleRoot>
+              <Router>
+                <Routes />
+              </Router>
+            </StyleRoot>
+          </div>
+        </Provider>
+      </ApolloProvider>
+    </MuiThemeProvider>
   )
 }
 
