@@ -5,21 +5,24 @@ import AppBar from 'material-ui/AppBar'
 
 import theme from 'theme'
 
-const styles = {
+const createStyles = ({ height }) => ({
   appBarRoot: {
     backgroundColor: theme.color.primary,
     height: '100%',
   },
   title: {
     height: 'inherit',
-    lineHeight: '50px',
+    lineHeight: `${height}px`,
     fontSize: 20,
   },
-}
+})
 
-const NavBar = ({ style, titleStyle, showMenuIconButton, ...props }) => (
-  <AppBar style={{ ...styles.appBarRoot, ...style }} titleStyle={styles.title} showMenuIconButton={false} {...props} />
-)
+const NavBar = ({ style, titleStyle, showMenuIconButton, ...props }) => {
+  const styles = createStyles(style)
+  return (
+    <AppBar style={{ ...styles.appBarRoot, ...style }} titleStyle={styles.title} showMenuIconButton={false} {...props} />
+  )
+}
 
 NavBar.propTypes = {}
 NavBar.defaultProps = {}
