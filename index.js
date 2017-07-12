@@ -18,7 +18,7 @@ app.use(morgan('combined')) // TODO: configure later
 
 // db setup
 mongoose.Promise = global.Promise
-mongoose.connect(config.mongodb, { useMongoClient: !!1 })
+mongoose.connect(config.db, { useMongoClient: !!1 })
 mongoose.connection.on('error', () => {
   log.fatal('unable to connect to mongodb')
 })
