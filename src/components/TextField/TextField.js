@@ -3,6 +3,8 @@ import TextField from 'material-ui/TextField'
 import PropTypes from 'prop-types'
 import Radium from 'radium'
 
+import theme from 'theme'
+
 const styles = {
   root: {
     height: 50,
@@ -11,32 +13,36 @@ const styles = {
     padding: '0 25px',
     display: 'flex',
     alignItems: 'center',
+    margin: '5px 0',
   },
   hintStyle: {
-    color: '#fff',
+    color: 'rgba(255, 255, 255, 0.5)',
     bottom: 'initial',
     fontSize: 12,
+    fontFamily: theme.fontFamily.regular,
   },
   hintIcon: {
     width: 16,
     fontSize: 16,
   },
   inputStyle: {
-    color: 'white',
+    color: theme.color.white,
   },
 }
 
-const TextFieldComponent = ({ hintIcon, hintText, ...props }) => {
+const TextFieldComponent = ({ textFieldStyle, hintIcon, hintText, ...props }) => {
   const iconHintText = <span><i style={styles.hintIcon} className={hintIcon} /> {hintText}</span>
   return (
-    <TextField
-      underlineShow={false}
-      style={styles.root}
-      hintStyle={styles.hintStyle}
-      hintText={iconHintText}
-      inputStyle={styles.inputStyle}
-      {...props}
-    />
+    <div>
+      <TextField
+        underlineShow={false}
+        style={{ ...styles.root, ...textFieldStyle }}
+        hintStyle={styles.hintStyle}
+        hintText={iconHintText}
+        inputStyle={styles.inputStyle}
+        {...props}
+      />
+    </div>
   )
 }
 

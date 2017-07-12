@@ -22,6 +22,7 @@
     "apollo-client": "1.2.2",
     "babel-polyfill": "6.23.0",
     "fastclick": "1.0.6",
+    "font-awesome": "^4.7.0",
     "graphql-tag": "2.1.0",
     "immutability-helper": "2.2.0",
     "jump.js": "^1.0.2",
