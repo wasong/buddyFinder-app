@@ -11,7 +11,7 @@
     "start:dev": "NODE_ENV=development nodemon index.js --exec babel-node",
     "clean": "rm -rf ./dist"
   },
-  "author": "",
+  "author": "CMPT 470 Group 2",
   "license": "ISC",
   "dependencies": {
     "auth0-js": "^8.8.0",
@@ -22,6 +22,7 @@
     "graphql-server-express": "^1.0.0",
     "graphql-tools": "^1.1.0",
     "jwt-simple": "^0.5.1",
+    "lodash": "^4.17.4",
     "mongoose": "^4.9.7",
     "morgan": "^1.8.1",
     "passport": "^0.3.2",

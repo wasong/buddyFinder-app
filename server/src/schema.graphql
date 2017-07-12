@@ -1,0 +1,14 @@
+type Query {
+  # Find user by id
+  user(id: String!): user
+
+  # # Find Amanda addresses by address
+  # amandaAddresses(address: String!, limit: Int = 10): [Address]
+  #
+  # # Find addresses by address and service
+  # addresses(address: String!, service: ServiceGroup!, limit: Int = 10): [Address]
+}
+
+schema {
+  query: Query
+}
