@@ -31,7 +31,7 @@ const config = {
 
   resolve: {
     alias: {
-      components: path.resolve(__dirname, '../src/components'),
+      components: path.resolve(__dirname, '../src/components/'),
       theme: path.resolve(__dirname, '../src/styles/theme.js'),
     },
   },
