@@ -13,7 +13,8 @@ const createStyles = ({ height }) => ({
   title: {
     height: 'inherit',
     lineHeight: `${height}px`,
-    fontSize: 20,
+    fontWeight: 'bolder',
+    fontSize: '1rem',
   },
 })
 

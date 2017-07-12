@@ -5,6 +5,9 @@ import { ApolloProvider, ApolloClient, createNetworkInterface } from 'react-apol
 import { Provider } from 'react-redux'
 import { StyleRoot } from 'radium'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
+import getMuiTheme from 'material-ui/styles/getMuiTheme'
+
+import theme from 'theme'
 
 import Routes from './routes'
 
@@ -21,9 +24,13 @@ const createClient = () => (
   })
 )
 
+const muiTheme = getMuiTheme({
+  fontFamily: theme.fontFamily.regular,
+})
+
 function App(props) {
   return (
-    <MuiThemeProvider>
+    <MuiThemeProvider muiTheme={muiTheme}>
       <ApolloProvider client={createClient()}>
         <Provider store={props.store}>
           <div>

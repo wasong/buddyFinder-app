@@ -19,7 +19,6 @@ const styles = {
     color: 'rgba(255, 255, 255, 0.5)',
     bottom: 'initial',
     fontSize: 12,
-    fontFamily: theme.fontFamily.regular,
   },
   hintIcon: {
     width: 16,
