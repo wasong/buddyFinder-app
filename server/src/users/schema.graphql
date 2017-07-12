@@ -1,11 +1,11 @@
 type user {
   id: String!
-  Age: Int
+  email: String!
+  age: Int
+  gender: String
   name: String
   friends: [String]
   friendsRequested: [String]
   friendsPending:[String]
-  gender: String
-  email: String!
-  profilePicture: String
+  avatar: String
 }

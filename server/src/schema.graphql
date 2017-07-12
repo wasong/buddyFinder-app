@@ -2,6 +2,9 @@ type Query {
   # Find user by id
   user(id: String!): user
 
+  # Find user by email
+  userByEmail(email: String!): user
+
   # # Find Amanda addresses by address
   # amandaAddresses(address: String!, limit: Int = 10): [Address]
   #
