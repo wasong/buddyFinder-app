@@ -7,6 +7,7 @@ const theme = {
     accent: '#EEA0A2',
     white: '#FEFEFE',
     black: '#41414C',
+    grey: '#D4CFD1',
   },
 }
 

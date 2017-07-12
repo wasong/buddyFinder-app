@@ -29,16 +29,16 @@ const styles = {
   },
 }
 
-const TextFieldComponent = ({ textFieldStyle, hintIcon, hintText, ...props }) => {
+const TextFieldComponent = ({ textFieldStyle, hintTextStyle, inputTextStyle, hintIcon, hintText, ...props }) => {
   const iconHintText = <span><i style={styles.hintIcon} className={hintIcon} /> {hintText}</span>
   return (
     <div>
       <TextField
         underlineShow={false}
         style={{ ...styles.root, ...textFieldStyle }}
-        hintStyle={styles.hintStyle}
+        hintStyle={{ ...styles.hintStyle, ...hintTextStyle }}
         hintText={iconHintText}
-        inputStyle={styles.inputStyle}
+        inputStyle={{ ...styles.inputStyle, ...inputTextStyle }}
         {...props}
       />
     </div>

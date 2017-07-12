@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 
 import TextField from 'components/TextField'
 import PrimaryButton from 'components/Button/PrimaryButton'
-import SecondaryButton from 'components/Button/SecondaryButton'
 import theme from 'theme'
 
 const styles = {
@@ -37,6 +36,7 @@ const styles = {
 
 const Welcome = props => (
   <div style={styles.root}>
+    <img src={hero} alt="hero" />
     <div style={styles.content}>
       <div style={styles.logo}>B<small>F</small></div>
       <div style={styles.slogan}>Insert our fancy slogan here</div>
