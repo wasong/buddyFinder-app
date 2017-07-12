@@ -36,7 +36,6 @@ const styles = {
 
 const Welcome = props => (
   <div style={styles.root}>
-    <img src={hero} alt="hero" />
     <div style={styles.content}>
       <div style={styles.logo}>B<small>F</small></div>
       <div style={styles.slogan}>Insert our fancy slogan here</div>
