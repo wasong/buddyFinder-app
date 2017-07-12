@@ -31,9 +31,10 @@ const config = {
 
   resolve: {
     alias: {
-      components: path.resolve(__dirname, '../src/components')
-    }
-  }
+      components: path.resolve(__dirname, '../src/components/'),
+      theme: path.resolve(__dirname, '../src/styles/theme.js'),
+    },
+  },
 
   // Developer tool to enhance debugging, source maps
   // http://webpack.github.io/docs/configuration.html#devtool

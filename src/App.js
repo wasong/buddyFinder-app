@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { ApolloProvider, ApolloClient, createNetworkInterface } from 'react-apollo'
 import { Provider } from 'react-redux'
-import { BrowserRouter as Router } from 'react-router-dom'
 import { StyleRoot } from 'radium'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 
@@ -43,9 +42,7 @@ function App(props) {
               ]}
             />
             <StyleRoot>
-              <Router>
-                <Routes />
-              </Router>
+              <Routes />
             </StyleRoot>
           </div>
         </Provider>
