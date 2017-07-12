@@ -1,5 +1,5 @@
-# BuddyFinder-api
-Backend service for our BuddyFinder-app
+# BuddyFinder-app
+Front end and Backend services for our App Buddy Finder
 
 ## To start:
 
