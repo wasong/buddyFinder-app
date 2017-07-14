@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import Radium from 'radium'
-import { Card } from 'material-ui/Card'
 
 import theme from 'theme'
 import GoogleMap from './Map.component'

@@ -1,5 +1,6 @@
 import React from 'react'
 import { withGoogleMap, GoogleMap, Marker, InfoWindow } from 'react-google-maps'
+import SearchBox from 'react-google-maps/lib/places/SearchBox'
 
 export default withGoogleMap(props => (
   <GoogleMap
