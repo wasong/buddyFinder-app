@@ -9,9 +9,11 @@ import theme from 'theme'
 const styles = {
   card: {
     position: 'absolute',
-    top: 70,
-    left: 20,
-    padding: 20,
+    top: 50,
+    left: 10,
+    padding: 0,
+    background: 'none',
+    boxShadow: 'none',
   },
 }
 
