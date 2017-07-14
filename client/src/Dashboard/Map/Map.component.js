@@ -1,18 +1,27 @@
 import React from 'react'
-import { withGoogleMap, GoogleMap, Marker } from 'react-google-maps'
+import { withGoogleMap, GoogleMap, Marker, InfoWindow } from 'react-google-maps'
 
 export default withGoogleMap(props => (
   <GoogleMap
     ref={props.onMapLoad}
     defaultZoom={14}
     defaultCenter={{ lat: 49.187737, lng: -122.849525 }}
-    onClick={props.onMapClick}
+    onClick={props.onClick}
   >
-    {props.markers.map((marker, index) => (
+    {props.markers.map(marker => (
       <Marker
         {...marker}
-        onRightClick={() => props.onMarkerRightClick(index)}
-      />
+        onClick={() => marker.onClick(marker)}
+        onRightClick={() => marker.onRightClick(marker)}
+      >
+        {
+          marker.showInfo && (
+            <InfoWindow onCloseClick={() => marker.onInfoClose(marker)}>
+              <div>{marker.infoContent}</div>
+            </InfoWindow>
+          )
+        }
+      </Marker>
     ))}
   </GoogleMap>
 ))

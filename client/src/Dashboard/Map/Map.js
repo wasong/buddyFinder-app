@@ -18,6 +18,36 @@ class Map extends Component {
     markers: [],
   }
 
+  handleMarkerRightClick = (targetMarker) => {
+    this.setState({
+      markers: this.state.markers.filter(marker => marker.key !== targetMarker.key),
+    })
+  }
+
+  handleOnInfoClose = (targetMarker) => {
+    this.setState({ markers: this.state.markers.map((marker) => {
+      if (marker.key === targetMarker.key) {
+        return {
+          ...marker,
+          showInfo: false,
+        }
+      }
+      return marker
+    }) })
+  }
+
+  handleOnMarkerClick = (targetMarker) => {
+    this.setState({ markers: this.state.markers.map((marker) => {
+      if (marker.key === targetMarker.key) {
+        return {
+          ...marker,
+          showInfo: true,
+        }
+      }
+      return marker
+    }) })
+  }
+
   handleOnMapClick = (event) => {
     this.setState({
       markers: [
@@ -26,15 +56,12 @@ class Map extends Component {
           position: event.latLng,
           defaultAnimation: 2,
           key: Date.now(),
+          showInfo: false,
+          onClick: this.handleOnMarkerClick,
+          onRightClick: this.handleMarkerRightClick,
+          onInfoClose: this.handleOnInfoClose,
         },
       ],
-    })
-  }
-
-  handleMarkerRightClick = (targetMarker) => {
-    // this library uses index to remove markers: maybe change later?
-    this.setState({
-      markers: this.state.markers.filter(marker => marker.key !== this.state.markers[targetMarker].key),
     })
   }
 
@@ -45,9 +72,8 @@ class Map extends Component {
           containerElement={<div style={{ height: '100%' }} />}
           mapElement={<div style={{ height: '100%' }} />}
           onMapLoad={() => {}}
-          onMapClick={this.handleOnMapClick}
+          onClick={this.handleOnMapClick}
           markers={this.state.markers}
-          onMarkerRightClick={this.handleMarkerRightClick}
         />
       </div>
     )
